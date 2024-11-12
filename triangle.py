@@ -80,7 +80,9 @@ def main():
     print(f"Абсолютная погрешность: {absolute_error:.4f}")
     print(f"Относительная погрешность: {relative_error:.2f}%")
     plot_graph(f1, f2, x_values, y_f1, y_f2, inter_y)
-    plt.scatter(x_random, y_random, color='red', s=1, alpha=0.5)
+    inside_triangle = (y_random > np.minimum(f1(x_random), f2(x_random))) & (y_random < np.maximum(f1(x_random), f2(x_random)))
+    plt.scatter(x_random[inside_triangle], y_random[inside_triangle], color='red', s=1, alpha=0.5)
+    plt.scatter(x_random[~inside_triangle], y_random[~inside_triangle], color='black', s=1, alpha=0.5)
     plt.show()
 
 if __name__ == "__main__":
