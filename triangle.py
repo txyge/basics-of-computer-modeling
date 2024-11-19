@@ -21,9 +21,9 @@ def calculate_functions(n):
 
     return f1, f2, dif, dif1, dif2
 
-def calculate_intersection(f1, f2):
+def calculate_intersection(f1, dif):
     init = 0
-    inter_x = fsolve(lambda x: f1(x) - f2(x), init)[0]
+    inter_x = fsolve(dif, init)[0]
     inter_y = f1(inter_x)
     return inter_x, inter_y
 
@@ -60,7 +60,7 @@ def plot_graph(f1, f2, x_values, y_f1, y_f2, inter_y):
 def main():
     n = 12
     f1, f2, dif, dif1, dif2 = calculate_functions(n)
-    inter_x, inter_y = calculate_intersection(f1, f2)
+    inter_x, inter_y = calculate_intersection(f1, dif)
     inter_a = fsolve(dif1, 0)[0]
     inter_b = fsolve(dif2, 0)[0]
     rectangle_area = calculate_rectangle_area(inter_y, inter_a, inter_b)
