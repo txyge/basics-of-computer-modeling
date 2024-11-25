@@ -33,7 +33,7 @@ def plot_graph(a, b, N, integral_approx):
     plt.plot(x, y, label='$\sqrt{29 - u \cdot \cos^2(x)}$', color='blue')
 
     # Заполнение области под графиком
-    plt.fill_between(x, 0, y, color='lightblue', alpha=0.5, label='Интегрируемая область')
+    plt.fill_between(x, 0, y, color='gray', alpha=0.5, label='Интегрируемая область')
 
     # Добавление случайных точек
     x_points = np.random.uniform(0, a, N)
