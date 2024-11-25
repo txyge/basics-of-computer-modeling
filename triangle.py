@@ -73,7 +73,7 @@ def main():
         if f1(x_random[i]) > y_random[i] < f2(x_random[i]):
             M += 1
     estimated_area = calculate_estimated_area(M, 100000, rectangle_area)
-    true_area = calculate_true_area(f1, f2, 0, 40)
+    true_area = calculate_true_area(f1, f2, -1.25,0)
     absolute_error, relative_error = calculate_errors(estimated_area, true_area)
     print(f"Приближённая площадь фигуры: {estimated_area:.4f}")
     print(f"Точная площадь фигуры: {true_area:.4f}")
